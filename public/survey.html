@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FreindFinder</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link href="./style.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-10" id="heading">
+				<h2>Survey Questions</h2>	
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-10">
+				<h3>Your Info</h3>	
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="form-group col-md-10">
+				<form>
+					<label for="name-box" class="labelClass">Name</label>
+					<br />
+					<input type="text" class="form-control input-md" name="name-box" id=name-box />
+					<br />
+
+					<label for="name-box" class="labelClass">Link to Photo Image</label>
+					<br />
+					<input type="text" class="form-control input-md" name="img-box" id=img-box />
+					<br />
+				</form>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		<div class="row" id="row1">
+			<div class="col-md-1"></div>
+			<div class="col-md-10">
+				<h3>Question 1</h3>
+				<p>Your mind is always buzzing with unexplored ideas and plans.</p>
+				<select class="selectpicker" id="question1">
+					<option value="">Select an Option</option>
+					<option value="1">1 (Strongly disagree)</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5 (Strongly agree)</option>
+				</select>
+				<!-- <button class="btn btn-primary dropdown-toggle" type="button" id="question1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Select an Option
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="question1">
+					<li value="1">1 (Strongly disagree)</li>
+					<li value="2"><a href="#row1">2</a></li>
+					<li value="3"><a href="#row1">3</a></li>
+					<li value="4"><a href="#row1">4</a></li>
+					<li value="5"><a href="#row1">5 (Strongly agree)</a></li>
+				</ul> -->
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		<div class="row" id="row2">
+			<div class="col-md-1"></div>
+			<div class="dropdown col-md-10">
+				<h3>Question 2</h3>
+				<p>Generally speaking, you rely more on your experience than your imagination.</p>
+				<select class="selectpicker" id="question2">
+					<option value="">Select an Option</option>
+					<option value="1">1 (Strongly disagree)</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5 (Strongly agree)</option>
+				</select>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		<div class="row" id="row3">
+			<div class="col-md-1"></div>
+			<div class="dropdown col-md-10">
+				<h3>Question 3</h3>
+				<p>You find it easy to stay relaxed and focused even when there is some pressure.</p>
+				<select class="selectpicker" id="question3">
+					<option value="">Select an Option</option>
+					<option value="1">1 (Strongly disagree)</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5 (Strongly agree)</option>
+				</select>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		<div class="row" id="row4">
+			<div class="col-md-1"></div>
+			<div class="dropdown col-md-10">
+				<h3>Question 4</h3>
+				<p>You rarely do something just out of sheer curiosity.</p>
+				<select class="selectpicker" id="question4">
+					<option value="">Select an Option</option>
+					<option value="1">1 (Strongly disagree)</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5 (Strongly agree)</option>
+				</select>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		<div class="row" id="row5">
+			<div class="col-md-1"></div>
+			<div class="dropdown col-md-10">
+				<h3>Question 5</h3>
+				<p>People can rarely upset you.</p>
+				<select class="selectpicker" id="question5">
+					<option value="">Select an Option</option>
+					<option value="1">1 (Strongly disagree)</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5 (Strongly agree)</option>
+				</select>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		<div class="row" id="row6">
+			<div class="col-md-1"></div>
+			<div class="dropdown col-md-10">
+				<h3>Question 6</h3>
+				<p>It is often difficult for you to relate to other people’s feelings.</p>
+				<select class="selectpicker" id="question6">
+					<option value="">Select an Option</option>
+					<option value="1">1 (Strongly disagree)</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5 (Strongly agree)</option>
+				</select>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		<div class="row" id="row7">
+			<div class="col-md-1"></div>
+			<div class="dropdown col-md-10">
+				<h3>Question 7</h3>
+				<p> In a discussion, truth should be more important than people’s sensitivities.</p>
+				<select class="selectpicker" id="question7">
+					<option value="">Select an Option</option>
+					<option value="1">1 (Strongly disagree)</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5 (Strongly agree)</option>
+				</select>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		<div class="row" id="row8">
+			<div class="col-md-1"></div>
+			<div class="dropdown col-md-10">
+				<h3>Question 8</h3>
+				<p>You rarely get carried away by fantasies and ideas.</p>
+				<select class="selectpicker" id="question8">
+					<option value="">Select an Option</option>
+					<option value="1">1 (Strongly disagree)</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5 (Strongly agree)</option>
+				</select>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		<div class="row" id="row9">
+			<div class="col-md-1"></div>
+			<div class="dropdown col-md-10">
+				<h3>Question 9</h3>
+				<p>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</p>
+				<select class="selectpicker" id="question9">
+					<option value="">Select an Option</option>
+					<option value="1">1 (Strongly disagree)</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5 (Strongly agree)</option>
+				</select>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		<div class="row" id="row10">
+			<div class="col-md-1"></div>
+			<div class="dropdown col-md-10">
+				<h3>Question 10</h3>
+				<p>YouYou feel more energetic after spending time with a group of people.</p>
+				<select class="selectpicker" id="question10">
+					<option value="">Select an Option</option>
+					<option value="1">1 (Strongly disagree)</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5 (Strongly agree)</option>
+				</select>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-10">
+				<button type="button" class="btn btn-primary btn-md" id="submit-button" data-toggle="modal" data-target="#myModal">SUBMIT</button>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+		
+			<!-- Modal content-->
+			<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h2 class="modal-title">Best Match</h2>
+			</div>
+			<div class="modal-body">
+				<h4>Test Name</h4>
+				<img src="https://i.pinimg.com/originals/8e/35/fb/8e35fb0ca2802166e97049a3477b6c3b.jpg" atl="Image" />
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+			</div>
+			
+		</div>
+		</div>
+
+	<script type="text/javascript">
+		//var baseUrl = window.location.origin;
+		  // Question: What does this code do?
+		//$(".dropdown-toggle").on("click", function() {
+			//return false;
+		//})
+
+		  $("#submit-button").on("click", function(event) {
+			  console.log("in button click")
+			event.preventDefault();
+
+			var scoresArray = [];
+			var question1 = $("#question1").val();
+			scoresArray.push(question1);
+			var question2 = $("#question2").val();
+			scoresArray.push(question2);
+			var question3 = $("#question3").val();
+			scoresArray.push(question3);
+			var question4 = $("#question4").val();
+			scoresArray.push(question4);
+			var question5 = $("#question5").val();
+			scoresArray.push(question5);
+			var question6 = $("#question6").val();
+			scoresArray.push(question6);
+			var question7 = $("#question7").val();
+			scoresArray.push(question7);
+			var question8 = $("#question8").val();
+			scoresArray.push(question8);
+			var question9 = $("#question9").val();
+			scoresArray.push(question9);
+			var question10 = $("#question10").val();
+			scoresArray.push(question10);
+
+			var friends = {
+			  name: $("#name-box").val().trim(),
+			  image: $("#img-box").val().trim(),
+			  scores: scoresArray
+			};
+			console.log(friends)
+	  
+			// Question: What does this code do??
+			//$.post(baseUrl + "/api/reservations", reservations)
+			$.post("/api/friends", friends)
+			  .then(function(data) {
+				console.log(data);
+			  });
+		  });
+		</script>
+	
+</body>
+</html>
