@@ -5,7 +5,6 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<link href="./style.css" rel="stylesheet">
 </head>
 <body>
 	<div class="container">
@@ -211,6 +210,7 @@
 			</div>
 			<div class="col-md-1"></div>
 		</div>
+		<br />
 		<div class="row">
 			<div class="col-md-1"></div>
 			<div class="col-md-10">
@@ -218,6 +218,14 @@
 			</div>
 			<div class="col-md-1"></div>
 		</div>
+		<br />
+		<div class="row">
+				<div class="col-md-1"></div>
+				<div class="col-md-10">
+					<a href="api/friends">Friends List</a> | <a href="/">Home</a>
+				</div>
+				<div class="col-md-1"></div>
+			</div>
 	</div>
 
 	<!-- Modal -->
@@ -230,9 +238,8 @@
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
 				<h2 class="modal-title">Best Match</h2>
 			</div>
-			<div class="modal-body">
-				<h4>Test Name</h4>
-				<img src="https://i.pinimg.com/originals/8e/35/fb/8e35fb0ca2802166e97049a3477b6c3b.jpg" atl="Image" />
+			<div class="modal-body" id="modal-info">
+				<h4 id="matchName"></h4>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -243,14 +250,8 @@
 		</div>
 
 	<script type="text/javascript">
-		//var baseUrl = window.location.origin;
-		  // Question: What does this code do?
-		//$(".dropdown-toggle").on("click", function() {
-			//return false;
-		//})
 
 		  $("#submit-button").on("click", function(event) {
-			  console.log("in button click")
 			event.preventDefault();
 
 			var scoresArray = [];
@@ -280,13 +281,19 @@
 			  image: $("#img-box").val().trim(),
 			  scores: scoresArray
 			};
-			console.log(friends)
 	  
-			// Question: What does this code do??
-			//$.post(baseUrl + "/api/reservations", reservations)
 			$.post("/api/friends", friends)
+				
 			  .then(function(data) {
-				console.log(data);
+				$.get("/api/friend", function(data) {
+						$("#matchName").append(data.name);
+						
+						var image = $("<img>");
+						image.attr("src", data.image);
+						image.css({"max-width" : "300px", "max-height" : "300px"});
+						$("#modal-info").append(image);
+					})
+				
 			  });
 		  });
 		</script>
